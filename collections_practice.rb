@@ -15,5 +15,29 @@ def swap_elements(arr)
 end
 
 def reverse_array(arr)
-arr.reverse
+  arr.reverse
+end
+
+def kesha_maker(arr)
+  arr.each do |word|
+    word[2] = "$"
+  end
+end
+
+def find_a(arr)
+  arr.select {|word| word.start_with?("a")}
+end
+
+def sum_array(arr)
+  arr.inject {|a, b| a + b}
+end
+
+def add_s (arr)
+  arr.each_with_index do |word, index|
+    if index = 1
+      word
+    else
+    word << "s"
+end
+  end
 end
