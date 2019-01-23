@@ -13,18 +13,14 @@ def sort_array_char_count(array)
 end
 
 def swap_elements(array)
-  second_element = 0
   second_element = array.slice!(1)
   array[2] = second_element
   array
 end
 
 def swap_elements_from_to(array, index, destination_index)
-  source_index = 0
-  source_index = array.slice!(index)
-  array[destination_index] = source_index
+  array[destination_index] = array.slice!(index)
   array
-  
 end
 
 def reverse_array(array)
@@ -61,14 +57,23 @@ def sum_array(array)
 end
 
 def add_s(array)
-  counter = 0
-array.map do |word|
-    if counter != 1 && counter < array.length
-      word << "s"
-      counter+=1
+  array.each_with_index.collect do |word, index|
+    # if word.start_with?("f")
+    #     word
+    if index == 1
+      word
     else
-      counter += 1
+      word << "s"
+      end
     end
   end
-  array
-end
+  #counter = 0
+#array.map do |word|
+#    if counter != 1 && counter < array.length
+#      word << "s"
+#      counter+=1
+#   else
+#     counter += 1
+#   end
+# end
+# array
